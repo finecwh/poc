@@ -1,4 +1,4 @@
-#[네트워크 APT 샘플]
+# [네트워크 APT 샘플]
 
 ## 샘플명:  good [afaj9215].zip.zip  
 악성 매크로가 첨부된 doc 파일, 매크로 동작시 Hancitor Loader라 불리는 Backdoor 악성코드 작동 개시,  
