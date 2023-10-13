@@ -1,8 +1,9 @@
 # [네트워크 APT 샘플]
 
+
 ## 샘플명:  good [afaj9215].zip.zip  
 악성 매크로가 첨부된 doc 파일, 매크로 동작시 Hancitor Loader라 불리는 Backdoor 악성코드 작동 개시,  
-C2 서버: '11.116.43.91', 상세분석 *<https://malware.news/t/lets-learn-in-depth-reversing-of-hancitor-dropper-loader-2016-vs-2018-malware-progression/24179>
+C2 서버: `11.116.43.91`, 상세분석 *<https://malware.news/t/lets-learn-in-depth-reversing-of-hancitor-dropper-loader-2016-vs-2018-malware-progression/24179>
 
 	Command   Description  
 	"r"   Download and execute .DLL or .EXE  
@@ -40,10 +41,10 @@ ASPack + ReflectiveLoader로 2중 팩 된 GandCrab 랜섬웨어
 ## 샘플명:  * 설계도((tjfrPeh1)).zip  
 xls 문서, 악성 매크로를 이용해 Powershell 명령을 실행.  
 Powershell 명령은 특정 C2로부터 파일을 다운로드 받아서 실행하는 명령이나 현재 C2 서버 죽음
-https://u.lewd.se/Q1Ftjx_yi3gf.jpg
+hxxps://u.lewd.se/Q1Ftjx_yi3gf.jpg
 
 
 ## 샘플명:  이력서 마케팅 password market123 지원자 지원번호 12123.zip  
-UPX 팩 된 백도어 악성코드. 북한의 해킹그룹 Lazarus에서 사용한것으로 추정. C2는 http://emsystec.com/include/inc.asp  
+UPX 팩 된 백도어 악성코드. 북한의 해킹그룹 Lazarus에서 사용한것으로 추정. C2는 hxxp://emsystec.com/include/inc.asp  
 상세 기술 분석 *<https://securelist.com/lazarus-trojanized-defi-app/106195/
 https://tria.ge/s?q=d65509f10b432f9bbeacfc39a3506e23&offset=2023-10-13T12%3A25%3A46.992219429Z&limit=50&button=>
