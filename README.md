@@ -1,50 +1,95 @@
 # [네트워크 APT 샘플]
 
-
 ## 샘플명:  good [afaj9215].zip.zip  
-악성 매크로가 첨부된 doc 파일, 매크로 동작시 Hancitor Loader라 불리는 Backdoor 악성코드 작동 개시,  
-C2 서버: `11.116.43.91`, 상세분석 <https://malware.news/t/lets-learn-in-depth-reversing-of-hancitor-dropper-loader-2016-vs-2018-malware-progression/24179>
+### 악성코드 설명  
+Redaman 또는 RTM 뱅킹 트로이목마 악성코드.  
+PDF 아이콘 파일로 위장된 EXE 악성파일로, "Windows Update" 명으로 Task Scheduler에 추가하여 지속성 유지  
+소프트웨어나 웹 활동을 정기적으로 검사하고 명령 및 제어(C2) 서버로 데이터 유출 및 추가 악성 페이로드 다운로드를 시도함.  
+  
+### 감염 호스트로부터 발생되는 통신
+		 
+     - 104.28.16.33 port 443 - namecha.in / HTTPS/SSL/TLS traffic
+	 - 94.156.189.28 port 80 / POST /index.php (Trojan.Redaman CnC Beacon)
 
-	Command   Description  
-	"r"   Download and execute .DLL or .EXE  
-	"l"   Download and execute .EXE in separate thread (arg=1)  
-	"e"   Download and execute .EXE in separate thread (arg=0)  
-	"b"   Download and inject code into svchost.exe  
-	"d"   N/A (not implemented; used to delete itself in older version)  
-	"c"   N/A (not implemented)  
-	"n"   N/A (not implemented)  
-
-
+### 상세분석 참고 및 샘플 출처 : 
+<https://www.malware-traffic-analysis.net/2018/10/02/index.html>
+  
+  
 ## 샘플명: guide123^pva23g333.zip  
-Polymorphic Autorun Worm 악성코드로, 실행 이후 이동식 드라이브등에 감염 시도하여 지속적으로 번식.   
-감염시 ns1.thepicturehut.net에 접속 시도. 시그니쳐 문자열은 <PATCH2>로 Registry에 등록되는 이름. Microsoft Defender에선 Vofus로 검출중  
-링크 <https://bbs.kafan.cn/thread-2254329-1-1.html>
+### 악성코드 설명 
+Emotet 다운로더 악성코드   
+악성 매크로를 이용하여 Emotet을 다운로드하는 문서 형태 악성코드  
+(Emotet : 금융정보 탈취 악성코드의 일종으로, `크리덴셜 탈취, 네트워크 증식, 민감정보 수집' 등의 악성행위 수행.
+활성화된 Emotet은 공격자와 통신을 유지하며 정보탈취 멀웨어, 랜섬웨어 등을 추가로 다운로드함)  
+Phishing 및 악성사이트를 접속을 통해 추가 악성코드(Emotet)를 다운로드하는 Downloader 악성코드
 
+### 감염 호스트로부터 발생되는 통신
+	
+	- 34.90.96.46 port 80 - diwafashions.com - GET /wp-admin/mqau6/ (Emotet 악성코드)
 
+### 상세분석 참고 및 샘플 출처
+<https://www.malware-traffic-analysis.net/2019/12/20/index.html>
+  
+  
 ## 샘플명: guide@pavdf123.zip  
-XClient로 알려진 백도어로, .net으로 작성되었으며 알려지지 않은 패커로 팩 되어있음. 백도어 자가삭제 및 업데이트, EXE 파일 다운로드 및 실행, 특정 URL 접속, PC 강제 종료, DDOS 공격 지시, 키로깅, 화면 캡쳐등의 기능 제공
+### 악성코드 설명
+Trickbot 악성코드 
+사용자 PC에서 웹 브라우저 정보 및 금융거래 정보 등 민감한 정보를 탈취하는 악성행위하며, 공격자는 주로 주로 기업을 대상으로 워드프로세서 문서형태(.doc)로 유포함
+keylogging 또는 크리덴셜 관련 API를 후킹하는 등의 행위 수행
 
+### 상세분석 참고 및 샘플 출처
+<https://www.malware-traffic-analysis.net/2019/12/20/index.html>
+  
+  
+## 샘플명: invoce=(pfj1xytq9).zip  
+### 악성코드 설명  
+Globeimposter 랜섬웨어  
+메두사락커(MedusaLocker)라는 공격자들의 유포되고 있으며 RDP(Remote Desktop Protocol, 원격 데스크톱 프로토콜)를 통해 유포되고 있는 것으로 추정  
+랜섬웨어 감염시 ..doc(예를들어, `1<확장자>..doc`) 확장자로 암호화되며, 암호화된 각 폴더에 Read___ME.html 이라는 랜섬 노트 생성  
+  
+### 상세분석 참고 및 샘플 출처
+<https://www.checkmal.com/video/read/735/?p=28&lang=ko>
+  
+  
+## 샘플명: manual+qwerty111+.zip  
+### 악성코드 설명
+Ursnif 악성코드  
+금융 정보 탈취 악성코드, 이메일 관련 프로그램 및 시스템에 설치된 인터넷 브라우져 계정정보를 탈취하는 악성행위 수행  
+해당 악성코드는 수행한 후 추가 악성파일을 다운로드 행위를 수행함
+  
+### 상세분석 참고 및 샘플 충처
+<https://www.malware-traffic-analysis.net/2019/07/29/index.html>
+  
+  
+## 샘플명: pwㅤfirst123.zip  
+### 악성코드 설명  
+Downloader 악성코드  
+악성 매크로를 이용해 추가 악성파일 다운로드 시도하는 문서(xls) 악성코드
 
-## 샘플명:  invoce=(pfj1xytq9).zip  
-GlobeImposter 랜섬웨어. Nullsoft Installer로 랜섬웨어 작동 코드를 팩해두었다
-
-
-## 샘플명:  manual+qwerty111+.zip  
-LoaderBot으로 명명된 백도어 악성코드. .Net으로 작성되었으며 CMD 명령실행, 파일 다운로드 및 실행, 자가 업데이트, 작업 스케쥴러 제어, 웹페이지 단축 아이콘 생성, 폴더 생성 등의 파일 작업 수행 가능. C2 서버란은 공란으로 설정 되어있음
+### 감염 호스트로부터 발생되는 통신
 	
+	- port 443 (HTTPS) - tinyurl.com - GET /y4cpohnr
+	- 217.160.0.242 port 80 - aminsanat.com - GET /wp-content/plugins/tech/LO-06.exe
 	
-## 샘플명:  * pwㅤfirst123.zip  
-ASPack + ReflectiveLoader로 2중 팩 된 GandCrab 랜섬웨어  
-링크 <https://medium.com/@comodo_labs/in-the-crabs-claws-the-new-version-of-ransomware-hits-everyone-but-russians-111f866f2bdc>
 
+### 상세분석 참고 및 샘플 출처
+<https://www.malware-traffic-analysis.net/2021/01/06/index.html>
+  
+  
+## 샘플명: 설계도((tjfrPeh1)).zip  
+### 악성코드 설명
+Remcos 악성코드  
+감염된 시스템에 원격으로 작업을 수행하는 데 사용하는 RATRAT(Remote Access Trojan) 유형 악성 코드  
+정보 탈취, PC 모니터링 등 악의적인 목적으로 사용  
+지속성 유지를 위해 레지스트리 등록
 
-## 샘플명:  * 설계도((tjfrPeh1)).zip  
-xls 문서, 악성 매크로를 이용해 Powershell 명령을 실행.  
-Powershell 명령은 특정 C2로부터 파일을 다운로드 받아서 실행하는 명령이나 현재 C2 서버 죽음
-hxxps://u.lewd.se/Q1Ftjx_yi3gf.jpg
-
-
-## 샘플명:  이력서 마케팅 password market123 지원자 지원번호 12123.zip  
-UPX 팩 된 백도어 악성코드. 북한의 해킹그룹 Lazarus에서 사용한것으로 추정. C2는 hxxp://emsystec.com/include/inc.asp  
-상세 기술 분석 <https://securelist.com/lazarus-trojanized-defi-app/106195/
-https://tria.ge/s?q=d65509f10b432f9bbeacfc39a3506e23&offset=2023-10-13T12%3A25%3A46.992219429Z&limit=50&button=>
+### 감염 호스트로부터 발생되는 통신
+	
+	- 79.134.225.92 port 2889 - whatgodcannotdodoestnotexist.duckdns.org
+	
+### 상세분석 참고 및 샘플 출처
+<https://www.malware-traffic-analysis.net/2021/01/06/index.html>
+<https://any.run/report/1787f73acf804bff30fe863e077fb5bc9799b3cb39065534198f894757907e79/a2a97018-dbdb-4c55-b693-e7a54ec2291d/>
+  
+  
+## 샘플명: 
